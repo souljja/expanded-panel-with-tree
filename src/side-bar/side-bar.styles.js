@@ -6,7 +6,7 @@ export const SideBarContainer = styled.div`
   left: 60px;
   height: 100%;
   background-color: lightsteelblue;
-  transform: translateX(${({ open }) => (open ? "0" : "calc(-100% - 18px)")});
+  transform: translateX(${({ open }) => (open ? "0" : "calc(-100% - 5px)")});
   transition: transform 500ms ease-in-out;
   &:after {
     content: "";
