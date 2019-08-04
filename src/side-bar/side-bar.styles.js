@@ -4,11 +4,20 @@ export const SideBarContainer = styled.div`
   position: fixed;
   top: 0;
   left: 60px;
-  width: 200px;
   height: 100%;
   background-color: lightsteelblue;
   transform: translateX(${({ open }) => (open ? "0" : "calc(-100% - 18px)")});
   transition: transform 500ms ease-in-out;
+  &:after {
+    content: "";
+    position: absolute;
+    top:0;
+    width: 5px;
+    right: -5px;
+    height: 100%;
+    cursor: col-resize;
+    background-color: lightgrey;
+  }
 `;
 
 export const Button = styled.button`
