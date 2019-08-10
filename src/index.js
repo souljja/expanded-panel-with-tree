@@ -1,19 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import { LeftNavigationPanel } from './left-navigation-panel/left-navigation-panel.component';
-import { SideBar } from './side-bar/side-bar.component';
-
+import { LeftNavigationPanel } from "./left-navigation-panel/left-navigation-panel.component";
+import { SideBar } from "./side-bar/side-bar.component";
+import { HeaderComponent } from "./header/header.component";
 
 import "./styles.css";
 
-function App() {
+const App = React.memo(() => {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => {
+    setOpen(!open);
+  };
   return (
     <div className="App">
-      <LeftNavigationPanel/>
-      <SideBar/>
+      <LeftNavigationPanel />
+      <HeaderComponent onOpen={handleOpen} />
+      <SideBar open={open} />
     </div>
   );
-}
+});
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);

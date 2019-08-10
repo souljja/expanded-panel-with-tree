@@ -1,16 +1,15 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Button, SideBarContainer, Header } from "./side-bar.styles";
 import { RecursiveTree } from "../recursive-tree/recursive-tree.component";
+import { VirtualizedTree } from "../virtualized-tree/virtualized-tree.component";
 
 let lastPosition = 0;
 export const SideBar = React.memo(props => {
-  const [open, setOpen] = useState(true);
+  
   const [style, setStyle] = useState({ width: 200 });
   const [dragging, setDragging] = useState(false);
   const containerRef = useRef(null);
-  const handleToggle = () => {
-    setOpen(!open);
-  };
+ 
 
   const handleMouseMove = event => {
     if (!dragging) {
@@ -46,16 +45,14 @@ export const SideBar = React.memo(props => {
 
   return (
     <>
-      <Header>
-        <Button onClick={handleToggle}>></Button>
-      </Header>
       <SideBarContainer
         ref={containerRef}
         style={style}
-        open={open}
+        open={props.open}
         onMouseDown={handleMouseDown}
       >
-        <RecursiveTree />
+        <VirtualizedTree/>
+        <RecursiveTree/>
       </SideBarContainer>
     </>
   );
