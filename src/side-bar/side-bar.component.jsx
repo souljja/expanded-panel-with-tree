@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Button, SideBarContainer, Header } from "./side-bar.styles";
 import { RecursiveTree } from "../recursive-tree/recursive-tree.component";
 import { VirtualizedTree } from "../virtualized-tree/virtualized-tree.component";
+import { NonRecursiveTree } from "../non-recursive-tree/non-recursive-tree.component";
 
 let lastPosition = 0;
 export const SideBar = React.memo(props => {
@@ -51,7 +52,7 @@ export const SideBar = React.memo(props => {
         open={props.open}
         onMouseDown={handleMouseDown}
       >
-        <VirtualizedTree/>
+        <NonRecursiveTree/>
         <RecursiveTree/>
       </SideBarContainer>
     </>

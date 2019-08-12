@@ -7,7 +7,7 @@ import { HeaderComponent } from "./header/header.component";
 import "./styles.css";
 
 const App = React.memo(() => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const handleOpen = () => {
     setOpen(!open);
   };
