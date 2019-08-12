@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { data } from "./../tree-data";
+import { NonRecursiveTreeContainer } from './non-recursive-tree.styles';
 import { NonRecursiveTreeItem } from "./non-recursive-tree-item/non-recursive-tree-item.component";
 
 export const NonRecursiveTree = React.memo(props => {
@@ -36,5 +37,5 @@ export const NonRecursiveTree = React.memo(props => {
     }
     return tree;
   };
-  return <div>{getTree()}</div>;
+  return <NonRecursiveTreeContainer>{getTree()}</NonRecursiveTreeContainer>;
 });
